@@ -1,0 +1,15 @@
+{
+  "name": "saucedemo-automation",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript test suite for SauceDemo — Voices.com Take-Home Assignment",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.19.39",
+    "typescript": "^5.0.0"
+  }
+}
