@@ -149,9 +149,22 @@ My rule: AI is a fast first draft. Every line I ship, I own.
 
 ---
 
+## CI & Sauce Labs Integration
+
+This suite ships with a GitHub Actions workflow (`.github/workflows/ci.yml`) that triggers on every push and pull request to `main`. It installs dependencies, downloads Chromium, runs the full test suite, and uploads the HTML report as a build artifact retained for 7 days.
+
+For production CI, the suite is designed to integrate with **Sauce Labs** via [`saucectl`](https://docs.saucelabs.com/dev/cli/saucectl/). GitHub Actions triggers the run; Sauce Labs provides cross-browser parallelisation across Chrome, Firefox, and Safari, plus a persistent test dashboard with video replay and failure history.
+
+```yaml
+# Example saucectl integration step (requires SAUCE_USERNAME + SAUCE_ACCESS_KEY secrets)
+- name: Run on Sauce Labs
+  run: npx saucectl run --config .sauce/config.yml
+```
+
+---
+
 ## What I'd add with more time
 
-- **GitHub Actions CI pipeline** — run on every PR, fail fast, post results as a check
 - **API-layer auth** — use `request` fixture to obtain session cookies, bypass login UI for tests that don't test login itself (speeds up the suite 30–40%)
 - **Visual regression with Percy** — screenshot comparison on inventory and checkout summary pages
 - **`problem_user` defect suite** — document the known broken behaviours as tracked bugs with `test.skip` annotations
