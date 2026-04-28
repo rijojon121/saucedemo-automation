@@ -1,6 +1,6 @@
 # SauceDemo Automation Suite
 
-**Voices.com — Test Automation Engineer Take-Home Assignment**
+**Test Automation Engineer Take-Home Assignment**
 **Author:** Rijo Johnson | **Framework:** Playwright + TypeScript | **Pattern:** Page Object Model
 
 ---

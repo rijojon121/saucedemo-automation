@@ -11,6 +11,7 @@ export default defineConfig({
 
   use: {
     baseURL: 'https://www.saucedemo.com',
+   // launchOptions: {slowMo :800},
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
